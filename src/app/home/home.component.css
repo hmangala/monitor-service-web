@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    padding: 0 16px;
+}
+
+input {
+    width: 250px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0 0 0 8px;
+}
+
+.jumbotron {
+    background-image: url("/assets/img/tech-bg.jpg");
+    background-color: #17234E;
+    margin-bottom: 0;
+    padding-left: 10px;
+    min-height: 80%;
+    text-align: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}

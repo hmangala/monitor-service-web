@@ -1,0 +1,33 @@
+<metrics-charts></metrics-charts>
+<div class="row">
+    <div class="col-xl-6">
+        <div class="card card-block">
+            <div id="container-heap" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
+                <div [ng2-highstocks]="chartStockThreads" class="graph"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-6">
+        <div class="card card-block">
+            <div id="container-heap-init" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
+                <div [ng2-highstocks]="chartStockThreadsPeak" class="graph"></div>
+            </div>
+        </div>
+    </div>
+    <h1>&nbsp;</h1>
+    <div class="col-xl-6">
+        <div class="card card-block">
+            <div id="container-heap-used" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
+                <div [ng2-highstocks]="chartStockThreadsDaemon" class="graph"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6">
+        <div class="card card-block">
+            <div id="container-heap-committed" style="min-width: 310px; height: 400px; max-width: 800px; margin: 0 auto">
+                <div [ng2-highstocks]="chartStockThreadsTotalStarted" class="graph"></div>
+            </div>
+        </div>
+    </div>
+</div>

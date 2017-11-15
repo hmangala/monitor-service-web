@@ -1,0 +1,94 @@
+<!-- Info  -->
+<div class="row-fluid">
+    <div class="widget-box">
+        <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
+            <h5>{{ serviceName }}</h5>
+        </div>
+        <div class="widget-content" *ngIf="serviceInfo">
+            <div class="todo">
+                <ul>
+                    <li class="clearfix">
+                        <div class="txt"> Service Uptime <span class="badge badge-important">{{ uptimeStr }}</span></div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="txt"> Processors <span class="badge badge-info">{{ serviceInfo.processors }}</span> </div>
+
+                    </li>
+                    <li class="clearfix">
+                        <div class="txt"> Classes <span class="badge badge-warning">{{ serviceInfo.classes }}</span></div>
+
+                    </li>
+                    <li class="clearfix">
+                        <div class="txt"> Classes Loaded <span class="badge badge-default">{{ serviceInfo.classesLoaded }}</span> </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="txt"> Classes Unloaded <span class="badge badge-important">{{ serviceInfo.classesUnloaded }}</span> </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-md-offset-3">
+    <button (click)="openModal('thread-dump')">Thread Dump</button>
+    <button class='btn-danger' (click)="openModal('trace')">Trace</button>
+    <button class='btn-success' (click)="openModal('beans')">Beans</button>
+    <button class='btn-info' (click)="openModal('mappings')">Mappings</button>
+    <button class='btn-warning' (click)="openModal('configprops')">Configurations</button>
+
+</div>
+
+
+<modal id="thread-dump">
+    <div class="mdl">
+        <div class="mdl-body">
+            <h1 style="color: blue">Thread Dump</h1>
+            <textarea id="schema" style="width: 100%; height: 450px; font-family: monospace; color: darkgreen" class="form-control" [(ngModel)]="bodyText"></textarea>
+            <button (click)="closeModal('thread-dump');">Close</button>
+        </div>
+    </div>
+    <div class="mdl-background"></div>
+</modal>
+<modal id="trace">
+    <div class="mdl">
+        <div class="mdl-body">
+            <h1 style="color: red">Trace</h1>
+            <textarea id="schema" style="width: 100%; height: 450px; font-family: monospace; color: darkgreen" class="form-control" [(ngModel)]="bodyText"></textarea>
+            <br>
+            <button (click)="closeModal('trace');">Close</button>
+        </div>
+    </div>
+    <div class="mdl-background"></div>
+</modal>
+<modal id="beans">
+    <div class="mdl">
+        <div class="mdl-body">
+            <h1 style="color: green">Beans</h1>
+            <textarea id="schema" style="width: 100%; height: 450px; font-family: monospace; color: darkgreen" class="form-control" [(ngModel)]="bodyText"></textarea>
+            <button (click)="closeModal('beans');">Close</button>
+        </div>
+    </div>
+    <div class="mdl-background"></div>
+</modal>
+<modal id="mappings">
+    <div class="mdl">
+        <div class="mdl-body">
+            <h1 style="color: dodgerblue">Mappings</h1>
+            <textarea id="schema" style="width: 100%; height: 450px; font-family: monospace; color: darkgreen" class="form-control" [(ngModel)]="bodyText"></textarea>
+            <button (click)="closeModal('mappings');">Close</button>
+        </div>
+    </div>
+    <div class="mdl-background"></div>
+</modal>
+<modal id="configprops">
+    <div class="mdl">
+        <div class="mdl-body">
+            <h1 style="color: orange">Configurations</h1>
+            <textarea id="schema" style="width: 100%; height: 450px; font-family: monospace; color: darkgreen" class="form-control" [(ngModel)]="bodyText"></textarea>
+            <button (click)="closeModal('configprops');">Close</button>
+        </div>
+    </div>
+    <div class="mdl-background"></div>
+</modal>
